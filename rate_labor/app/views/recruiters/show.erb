@@ -5,6 +5,9 @@
   .bad {
     color: red;
   }
+  body {
+    background-color: #ccffff;
+  }
 </style>
 
 <div class="container">
@@ -17,9 +20,11 @@
   </ul>
   <h3>Reviews:</h3>
   <% @reviews.each do |review| %>
-    <p class="<%= review.positivity == true ? 'good' : 'bad' %>">
-      <%= review.positivity == true ? "Good Recruiter" : "Bad Recruiter" %>
-    </p>
-    <p><%= review.content %></p>
+    <div class="card-panel z-depth-3">
+      <p class="<%= review.positivity == true ? 'good' : 'bad' %>">
+        <%= review.positivity == true ? "Good Recruiter" : "Bad Recruiter" %>
+      </p>
+      <p><%= review.content %></p>
+    </div>
   <% end %>
 </div>

@@ -1,0 +1,25 @@
+<style>
+  .good {
+    color: green;
+  }
+  .bad {
+    color: red;
+  }
+  body {
+    background-color: #ccffff;
+  }
+</style>
+
+<div class="container">
+  <div class="card-panel z-depth-4">
+    <h3>Reviews</h3>
+    <% @reviews.each do |review| %>
+      <div class="card-panel z-depth-2">
+        <p class="<%= review.positivity == true ? 'good' : 'bad' %>">
+          <%= review.positivity == true ? "Good #{review.reviewable_type}" : "Bad #{review.reviewable_type}" %>
+        </p>
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 50.times do |iteration|
   Company.create(
     name: Faker::Company.name,
@@ -16,6 +17,14 @@
       phone: Faker::PhoneNumber.cell_phone,
       company_id: iteration
     )
+    3.times do
+      Review.create(
+        content: Faker::Lorem.paragraph,
+        reviewable_id: Recruiter.all.length - 1,
+        positivity: [true, false].sample,
+        reviewable_type: "Recruiter"
+      )
+    end
   end
   3.times do
     Review.create(
@@ -23,12 +32,6 @@
       reviewable_id: iteration,
       positivity: [true, false].sample,
       reviewable_type: "Company"
-    )
-    Review.create(
-      content: Faker::Lorem.paragraph,
-      reviewable_id: iteration,
-      positivity: [true, false].sample,
-      reviewable_type: "Recruiter"
     )
   end
 end
