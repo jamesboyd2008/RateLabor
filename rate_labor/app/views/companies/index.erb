@@ -1,3 +1,25 @@
-<% @companies.each do |company| %>
-  <p><%= company.name %></p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col l4">
+      <div class="card-panel">
+        <% @companies_1.each do |company| %>
+          <p><a href="#"><%= company.name %></a></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col l4">
+      <div class="card-panel">
+        <% @companies_2.each do |company| %>
+          <p><a href="#"><%= company.name %></a></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col l4">
+      <div class="card-panel">
+        <% @companies_3.each do |company| %>
+          <p><a href="#"><%= company.name %></a></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
