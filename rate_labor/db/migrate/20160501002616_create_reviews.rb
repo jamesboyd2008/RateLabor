@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       # t.references :reviewable, polymorphic: true, index: true
       t.integer :reviewable_id
       t.string :reviewable_type
+      t.boolean :positivity
       t.timestamps null: false
     end
 

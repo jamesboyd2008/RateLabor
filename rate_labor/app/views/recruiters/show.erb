@@ -1,0 +1,25 @@
+<style>
+  .good {
+    color: green;
+  }
+  .bad {
+    color: red;
+  }
+</style>
+
+<div class="container">
+  <h1><%= @recruiter.name %></h1>
+  <h3>Contact Info:</h3>
+  <ul>
+    <li><%= @recruiter.email %></li>
+    <li><%= @recruiter.phone %></li>
+    <li>Company:<%= @company.name %></li>
+  </ul>
+  <h3>Reviews:</h3>
+  <% @reviews.each do |review| %>
+    <p class="<%= review.positivity == true ? 'good' : 'bad' %>">
+      <%= review.positivity == true ? "Good Recruiter" : "Bad Recruiter" %>
+    </p>
+    <p><%= review.content %></p>
+  <% end %>
+</div>

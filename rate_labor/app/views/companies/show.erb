@@ -1,0 +1,26 @@
+<style>
+  .good {
+    color: green;
+  }
+  .bad {
+    color: red;
+  }
+</style>
+
+<div class="container">
+  <h3><%= @company.name %></h3>
+  <h5>Description:</h5>
+  <p><%= @company.description %></p>
+  <h5>Reviews:</h5>
+  <% @reviews.each do |review| %>
+    <p class="<%= review.positivity == true ? 'good' : 'bad' %>">
+      <%= review.positivity == true ? "Good Company" : "Bad Company" %>
+    </p>
+    <p><%= review.content %></p>
+  <% end %>
+
+  <h5>Recruiters:</h5>
+  <% @recruiters.each do |recruiter| %>
+    <a href="/recruiters/<%= recruiter.id %>"><%= recruiter.name %></a><br>
+  <% end %>
+</div>
