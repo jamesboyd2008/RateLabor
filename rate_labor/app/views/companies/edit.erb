@@ -1,0 +1,30 @@
+<style>
+  .good {
+    color: green;
+  }
+  .bad {
+    color: red;
+  }
+  body {
+    background-color: #ccffff;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col l4">
+      <div class="card-panel">
+        <% @good_companies.each do |company| %>
+          <a class="good" href="/companies/<%= company.id %>"><%= company.name %></a><br>
+        <% end %>
+      </div>
+    </div>
+    <div class="col l4">
+      <div class="card-panel">
+        <% @bad_companies.each do |company| %>
+          <a class= "bad" href="/companies/<%= company.id %>"><%= company.name %></a><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
