@@ -1,0 +1,27 @@
+<style>
+  .good {
+    color: green;
+  }
+  .bad {
+    color: red;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col l4">
+      <div class="card-panel">
+        <% @good_recruiters.each do |recruiter| %>
+          <a class="good" href="/recruiters/<%= recruiter.id %>"><%= recruiter.name %></a><br>
+        <% end %>
+      </div>
+    </div>
+    <div class="col l4">
+      <div class="card-panel">
+        <% @bad_recruiters.each do |recruiter| %>
+          <a class= "bad" href="/recruiters/<%= recruiter.id %>"><%= recruiter.name %></a><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
