@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+50.times do |iteration|
+  Company.create(
+    name: Faker::Company.name,
+    description: Faker::Company.catch_phrase
+  )
+  Recruiter.create(
+    name: Faker::Name.name, email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.cell_phone,
+    company_id: rand(Company.all.length)
+  )
+  Review.create(
+    content:
+    entity_under_review: ""
+    entity_id:
+  )
+  Review.create(
+    content:
+    entity_under_review:
+    entity_id:
+  )
+end

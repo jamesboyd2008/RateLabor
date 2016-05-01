@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :companies
   resources :recruiters
+  resources :reviews
 
   root 'welcome#index'
 
