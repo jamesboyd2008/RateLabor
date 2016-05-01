@@ -15,14 +15,18 @@
     phone: Faker::PhoneNumber.cell_phone,
     company_id: rand(Company.all.length)
   )
-  Review.create(
-    content: Faker::Lorem.paragraph,
-    reviewable_id: iteration,
-    reviewable_type: "Company"
-  )
-  Review.create(
-    content: Faker::Lorem.paragraph,
-    reviewable_id: iteration,
-    reviewable_type: "Recruiter"
-  )
+  3.times do
+    Review.create(
+      content: Faker::Lorem.paragraph,
+      reviewable_id: iteration,
+      positivity: [true, false].sample,
+      reviewable_type: "Company"
+    )
+    Review.create(
+      content: Faker::Lorem.paragraph,
+      reviewable_id: iteration,
+      positivity: [true, false].sample,
+      reviewable_type: "Recruiter"
+    )
+  end
 end

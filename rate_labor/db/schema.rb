@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160501012321) do
     t.text     "content"
     t.integer  "reviewable_id"
     t.string   "reviewable_type"
+    t.boolean  "positivity"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
