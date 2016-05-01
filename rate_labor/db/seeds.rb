@@ -11,18 +11,18 @@
     description: Faker::Company.catch_phrase
   )
   Recruiter.create(
-    name: Faker::Name.name, email: Faker::Internet.email,
+    name: Faker::Name.first_name, email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
     company_id: rand(Company.all.length)
   )
   Review.create(
-    content:
-    entity_under_review: ""
-    entity_id:
+    content: Faker::Lorem.paragraph,
+    reviewable_id: iteration,
+    reviewable_type: "Company"
   )
   Review.create(
-    content:
-    entity_under_review:
-    entity_id:
+    content: Faker::Lorem.paragraph,
+    reviewable_id: iteration,
+    reviewable_type: "Recruiter"
   )
 end
