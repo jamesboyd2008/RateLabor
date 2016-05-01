@@ -18,4 +18,9 @@
     </p>
     <p><%= review.content %></p>
   <% end %>
+
+  <h5>Recruiters:</h5>
+  <% @recruiters.each do |recruiter| %>
+    <a href="/recruiters/<%= recruiter.id %>"><%= recruiter.name %></a><br>
+  <% end %>
 </div>

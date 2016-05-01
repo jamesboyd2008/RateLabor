@@ -11,5 +11,6 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @reviews = Review.where(reviewable_type: "Company", reviewable_id: params[:id])
+    @recruiters = Recruiter.where(company_id: params[:id])
   end
 end
