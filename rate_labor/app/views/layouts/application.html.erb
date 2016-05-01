@@ -7,40 +7,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <style>
+    body {
+      background-image: url("work.jpg");
+      background-size: 100%;
+    }
+  </style>
 </head>
+<!-- <body> background="https://www.kissfromtheworld.com/user_yourwowshot/162/images/001_Philippines_yws_citta_Hard_labor_Kiss_From_The_World_travel_and_people_magazine.jpg"> -->
+<div id="bground">
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">RateLabor</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#">Companies</a></li>
-          <li><a href="#">Recruiters</a></li>
-          <li><a href="#">Reviews</a></li>
-        </ul>
-        <form class="navbar-form navbar-right" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+  <nav>
+    <div class="nav-wrapper green">
+      <a href="#" class="brand-logo left">RateLabor</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Sass</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">JavaScript</a></li>
+      </ul>
+    </div>
   </nav>
 
+  <!-- <div class="parallax-container">
+    <div class="parallax"><img src=""></div>
+  </div> -->
+
   <%= yield %>
-  <%= image_tag("work.jpg", size: "1300x400") %>
+
+  <!-- <%= image_tag("work.jpg", size: "1300x400") %> -->
+
 
 </body>
+</div>
 </html>
